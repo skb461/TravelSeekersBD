@@ -3,7 +3,7 @@
 #myVideo{
     position: relative;
     right: 0;
-    min-width: 100%; 
+    max-width: 100%; 
     min-height: 100vh;
 }
   
@@ -75,12 +75,30 @@
     background-size: cover;
 }
 
-#client{
+#client {
+    position: relative;
     background: url('image/cover.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
+#client::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+#client .container {
+    position: relative;
+    z-index: 2;
+}
+
 
 .main {
     display: flex;
@@ -91,12 +109,9 @@
     text-align: center;
     color: #ffde01;
     width: 23%;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
     cursor: pointer;
     transition: 0.5s;
     padding: 70px 20px;
-    box-sizing: border-box;
 }
 
 .counterup h2 {
@@ -110,4 +125,27 @@
 
 #special_offer>div>div>div>h1{
     font-style: italic;
+}
+
+
+
+
+
+
+.div.polaroid {
+    width: 284px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.div.rotate_right {
+    float: left;
+    transform: rotate(7deg);
+}
+
+.div.rotate_left {
+    float: left;
+    transform: rotate(-8deg);
 }
